@@ -631,7 +631,8 @@ user_pref("browser.search.suggest.enabled",			false);
 // PREF: Disable "Show search suggestions in location bar results"
 user_pref("browser.urlbar.suggest.searches",			false);
 // PREF: When using the location bar, don't suggest URLs from browsing history
-user_pref("browser.urlbar.suggest.history",			false);
+// NOTE: Enabling because this is useful
+user_pref("browser.urlbar.suggest.history",			true);
 
 // PREF: Disable SSDP
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1111967
@@ -745,7 +746,8 @@ user_pref("network.cookie.thirdparty.sessionOnly",		true);
 // NOTICE: Private browsing breaks Kerberos authentication
 // NOTICE: Disables "Containers" functionality (see below)
 // NOTICE: "Always use private browsing mode" (browser.privatebrowsing.autostart) disables the possibility to use password manager: https://support.mozilla.org/en-US/kb/usernames-and-passwords-are-not-saved#w_private-browsing
-user_pref("browser.privatebrowsing.autostart",			true);
+// NOTE: Disabling since it breaks container tabs
+user_pref("browser.privatebrowsing.autostart",			false);
 
 // PREF: Do not download URLs for the offline cache
 // http://kb.mozillazine.org/Browser.cache.offline.enable
@@ -761,7 +763,7 @@ user_pref("privacy.clearOnShutdown.cache",			true);
 user_pref("privacy.clearOnShutdown.cookies",			true);
 user_pref("privacy.clearOnShutdown.downloads",			true);
 user_pref("privacy.clearOnShutdown.formdata",			true);
-user_pref("privacy.clearOnShutdown.history",			true);
+user_pref("privacy.clearOnShutdown.history",			false);
 user_pref("privacy.clearOnShutdown.offlineApps",		true);
 user_pref("privacy.clearOnShutdown.sessions",			true);
 user_pref("privacy.clearOnShutdown.openWindows",		true);
@@ -775,11 +777,11 @@ user_pref("privacy.cpd.cache",					true);
 user_pref("privacy.cpd.cookies",				true);
 user_pref("privacy.cpd.downloads",				true);
 user_pref("privacy.cpd.formdata",				true);
-user_pref("privacy.cpd.history",				true);
+user_pref("privacy.cpd.history",				false);
 user_pref("privacy.cpd.sessions",				true);
 
 // PREF: Don't remember browsing history
-user_pref("places.history.enabled",				false);
+user_pref("places.history.enabled",				true);
 
 // PREF: Disable disk cache
 // http://kb.mozillazine.org/Browser.cache.disk.enable
