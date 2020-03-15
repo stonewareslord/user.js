@@ -767,6 +767,8 @@ user_pref("privacy.clearOnShutdown.history",			false);
 user_pref("privacy.clearOnShutdown.offlineApps",		true);
 user_pref("privacy.clearOnShutdown.sessions",			true);
 user_pref("privacy.clearOnShutdown.openWindows",		true);
+// NOTE: Do not clear site settings because tat is set by the user
+//user_pref("privacy.clearOnShutdown.siteSettings",		true);
 
 // PREF: Set time range to "Everything" as default in "Clear Recent History"
 user_pref("privacy.sanitize.timeSpan",				0);
@@ -942,7 +944,8 @@ user_pref("layout.css.visited_links_enabled",			false);
 user_pref("browser.urlbar.autocomplete.enabled",		false);
 
 // PREF: Do not check if Firefox is the default browser
-user_pref("browser.shell.checkDefaultBrowser",			false);
+// NOTE: Disabled because I do always want Firefox as my default
+// user_pref("browser.shell.checkDefaultBrowser",			false);
 
 // PREF: When password manager is enabled, lock the password storage periodically
 // CIS Version 1.2.0 October 21st, 2011 2.5.3 Disable Prompting for Credential Storage
@@ -1154,3 +1157,12 @@ user_pref("security.ssl3.dhe_dss_camellia_256_sha",		false);
 // PREF: Fallbacks due compatibility reasons
 user_pref("security.ssl3.rsa_aes_256_sha",			true); // 0x35
 user_pref("security.ssl3.rsa_aes_128_sha",			true); // 0x2f
+
+/******************************************************************************
+ * SECTION: My personal changes
+ ******************************************************************************/
+user_pref("general.smoothScroll",				false);
+user_pref("browser.ctrlTab.recentlyUsedOrder",			false);
+user_pref("browser.shell.checkDefaultBrowser",			true);
+user_pref("extensions.htmlaboutaddons.recommendations.enabled",	false);
+user_pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features",	false);
