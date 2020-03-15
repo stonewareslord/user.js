@@ -112,7 +112,8 @@ user_pref("dom.event.clipboardevents.enabled",			false);
 // PREF: Disable "copy to clipboard" functionality via Javascript (Firefox >= 41)
 // NOTICE: Disabling clipboard operations will break legitimate JS-based "copy to clipboard" functionality
 // https://hg.mozilla.org/mozilla-central/rev/2f9f8ea4b9c3
-user_pref("dom.allow_cut_copy", false);
+// NOTE: Disabling because legitimate use cases of JS copy don't work
+// user_pref("dom.allow_cut_copy", false);
 
 // PREF: Disable speech recognition
 // https://dvcs.w3.org/hg/speech-api/raw-file/tip/speechapi.html
@@ -1166,3 +1167,4 @@ user_pref("browser.ctrlTab.recentlyUsedOrder",			false);
 user_pref("browser.shell.checkDefaultBrowser",			true);
 user_pref("extensions.htmlaboutaddons.recommendations.enabled",	false);
 user_pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features",	false);
+user_pref("dom.allow_cut_copy",	true);
