@@ -762,7 +762,6 @@ user_pref("privacy.clearOnShutdown.history",			true);
 user_pref("privacy.clearOnShutdown.offlineApps",		true);
 user_pref("privacy.clearOnShutdown.sessions",			true);
 user_pref("privacy.clearOnShutdown.openWindows",		true);
-user_pref("privacy.clearOnShutdown.siteSettings",		true);
 
 // PREF: Set time range to "Everything" as default in "Clear Recent History"
 user_pref("privacy.sanitize.timeSpan",				0);
