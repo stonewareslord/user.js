@@ -110,8 +110,7 @@ user_pref("dom.event.clipboardevents.enabled",			false);
 // PREF: Disable "copy to clipboard" functionality via Javascript (Firefox >= 41)
 // NOTICE: Disabling clipboard operations will break legitimate JS-based "copy to clipboard" functionality
 // https://hg.mozilla.org/mozilla-central/rev/2f9f8ea4b9c3
-// NOTE: Disabling because legitimate use cases of JS copy don't work
-// user_pref("dom.allow_cut_copy", false);
+user_pref("dom.allow_cut_copy", false);
 
 // PREF: Disable speech recognition
 // https://dvcs.w3.org/hg/speech-api/raw-file/tip/speechapi.html
@@ -763,8 +762,7 @@ user_pref("privacy.clearOnShutdown.history",			true);
 user_pref("privacy.clearOnShutdown.offlineApps",		true);
 user_pref("privacy.clearOnShutdown.sessions",			true);
 user_pref("privacy.clearOnShutdown.openWindows",		true);
-// NOTE: Do not clear site settings because tat is set by the user
-//user_pref("privacy.clearOnShutdown.siteSettings",		true);
+user_pref("privacy.clearOnShutdown.siteSettings",		true);
 
 // PREF: Set time range to "Everything" as default in "Clear Recent History"
 user_pref("privacy.sanitize.timeSpan",				0);
@@ -1188,6 +1186,7 @@ user_pref("browser.urlbar.suggest.history",			true);
 user_pref("browser.privatebrowsing.autostart",			false);
 
 // I want to save history
+user_pref("privacy.clearOnShutdown.siteSettings",		false);
 user_pref("privacy.clearOnShutdown.history",			false);
 user_pref("privacy.cpd.history",				false);
 user_pref("places.history.enabled",				true);
