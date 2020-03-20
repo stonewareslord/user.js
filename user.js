@@ -15,13 +15,11 @@
 // NOTICE: Disabling ServiceWorkers breaks functionality on some sites (Google Street View...)
 // Unknown security implications
 // CVE-2016-5259, CVE-2016-2812, CVE-2016-1949, CVE-2016-5287 (fixed)
-// NOTE: Disabled because this is now handled by uMatrix
-// user_pref("dom.serviceWorkers.enabled",				false);
+user_pref("dom.serviceWorkers.enabled",				false);
 
 // PREF: Disable web notifications
 // https://support.mozilla.org/en-US/questions/1140439
-// NOTE: Disabled because the notifications are not that annoying
-// user_pref("dom.webnotifications.enabled",			false);
+user_pref("dom.webnotifications.enabled",			false);
 
 // PREF: Disable DOM timing API
 // https://wiki.mozilla.org/Security/Reviews/Firefox/NavigationTimingAPI
@@ -236,8 +234,7 @@ user_pref("javascript.use_us_english_locale",			true);
 
 // PREF: Do not submit invalid URIs entered in the address bar to the default search engine
 // http://kb.mozillazine.org/Keyword.enabled
-// NOTE: Enabling to make the awesomebar search work
-user_pref("keyword.enabled",					true);
+user_pref("keyword.enabled",					false);
 
 // PREF: Don't trim HTTP off of URLs in the address bar.
 // https://bugzilla.mozilla.org/show_bug.cgi?id=665580
@@ -632,8 +629,7 @@ user_pref("browser.search.suggest.enabled",			false);
 // PREF: Disable "Show search suggestions in location bar results"
 user_pref("browser.urlbar.suggest.searches",			false);
 // PREF: When using the location bar, don't suggest URLs from browsing history
-// NOTE: Enabling because this is useful
-user_pref("browser.urlbar.suggest.history",			true);
+user_pref("browser.urlbar.suggest.history",			false);
 
 // PREF: Disable SSDP
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1111967
@@ -747,8 +743,7 @@ user_pref("network.cookie.thirdparty.sessionOnly",		true);
 // NOTICE: Private browsing breaks Kerberos authentication
 // NOTICE: Disables "Containers" functionality (see below)
 // NOTICE: "Always use private browsing mode" (browser.privatebrowsing.autostart) disables the possibility to use password manager: https://support.mozilla.org/en-US/kb/usernames-and-passwords-are-not-saved#w_private-browsing
-// NOTE: Disabling since it breaks container tabs
-user_pref("browser.privatebrowsing.autostart",			false);
+user_pref("browser.privatebrowsing.autostart",			true);
 
 // PREF: Do not download URLs for the offline cache
 // http://kb.mozillazine.org/Browser.cache.offline.enable
@@ -764,7 +759,7 @@ user_pref("privacy.clearOnShutdown.cache",			true);
 user_pref("privacy.clearOnShutdown.cookies",			true);
 user_pref("privacy.clearOnShutdown.downloads",			true);
 user_pref("privacy.clearOnShutdown.formdata",			true);
-user_pref("privacy.clearOnShutdown.history",			false);
+user_pref("privacy.clearOnShutdown.history",			true);
 user_pref("privacy.clearOnShutdown.offlineApps",		true);
 user_pref("privacy.clearOnShutdown.sessions",			true);
 user_pref("privacy.clearOnShutdown.openWindows",		true);
@@ -780,11 +775,11 @@ user_pref("privacy.cpd.cache",					true);
 user_pref("privacy.cpd.cookies",				true);
 user_pref("privacy.cpd.downloads",				true);
 user_pref("privacy.cpd.formdata",				true);
-user_pref("privacy.cpd.history",				false);
+user_pref("privacy.cpd.history",				true);
 user_pref("privacy.cpd.sessions",				true);
 
 // PREF: Don't remember browsing history
-user_pref("places.history.enabled",				true);
+user_pref("places.history.enabled",				false);
 
 // PREF: Disable disk cache
 // http://kb.mozillazine.org/Browser.cache.disk.enable
@@ -945,8 +940,7 @@ user_pref("layout.css.visited_links_enabled",			false);
 user_pref("browser.urlbar.autocomplete.enabled",		false);
 
 // PREF: Do not check if Firefox is the default browser
-// NOTE: Disabled because I do always want Firefox as my default
-// user_pref("browser.shell.checkDefaultBrowser",			false);
+user_pref("browser.shell.checkDefaultBrowser",			false);
 
 // PREF: When password manager is enabled, lock the password storage periodically
 // CIS Version 1.2.0 October 21st, 2011 2.5.3 Disable Prompting for Credential Storage
@@ -1162,9 +1156,38 @@ user_pref("security.ssl3.rsa_aes_128_sha",			true); // 0x2f
 /******************************************************************************
  * SECTION: My personal changes
  ******************************************************************************/
+// Smooth scroll is a mistake
 user_pref("general.smoothScroll",				false);
+
+// Why would anyone want this? It's like setting Ctrl+Shift+Tab to a random browser feature
 user_pref("browser.ctrlTab.recentlyUsedOrder",			false);
+
+// I want firefox as my default!
 user_pref("browser.shell.checkDefaultBrowser",			true);
+
+// Obvious disable
 user_pref("extensions.htmlaboutaddons.recommendations.enabled",	false);
 user_pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features",	false);
+
+// Allows for writing to the clipboard
 user_pref("dom.allow_cut_copy",	true);
+
+// Disabled because this is now handled by uMatrix
+user_pref("dom.serviceWorkers.enabled",				true);
+
+// Disabled because the notifications are not that annoying
+user_pref("dom.webnotifications.enabled",			false);
+
+// Enabling to make the awesomebar search work
+user_pref("keyword.enabled",					true);
+
+// Enabling because this is useful
+user_pref("browser.urlbar.suggest.history",			true);
+
+// Breaks container tabs (temporary containers)
+user_pref("browser.privatebrowsing.autostart",			false);
+
+// I want to save history
+user_pref("privacy.clearOnShutdown.history",			false);
+user_pref("privacy.cpd.history",				false);
+user_pref("places.history.enabled",				true);
