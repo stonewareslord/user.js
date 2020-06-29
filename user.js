@@ -1208,3 +1208,20 @@ user_pref("privacy.clearOnShutdown.siteSettings",		false);
 user_pref("privacy.clearOnShutdown.history",			false);
 user_pref("privacy.cpd.history",				false);
 user_pref("places.history.enabled",				true);
+
+// Taken care of by temporary containers
+user_pref("privacy.sanitize.sanitizeOnShutdown",		false);
+user_pref("privacy.clearOnShutdown.cache",			true);
+user_pref("privacy.clearOnShutdown.cookies",			false);
+user_pref("privacy.clearOnShutdown.downloads",			false);
+user_pref("privacy.clearOnShutdown.formdata",			false);
+// Already set above: user_pref("privacy.clearOnShutdown.history",			true);
+user_pref("privacy.clearOnShutdown.offlineApps",		true);
+user_pref("privacy.clearOnShutdown.sessions",			false);
+user_pref("privacy.clearOnShutdown.openWindows",		true);
+
+// Just annoying
+user_pref("browser.disableResetPrompt",				true);
+
+// Helpful for debugging
+user_pref("devtools.inspector.color-scheme-simulation.enabled"	true);
