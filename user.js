@@ -1224,4 +1224,8 @@ user_pref("privacy.clearOnShutdown.openWindows",		true);
 user_pref("browser.disableResetPrompt",				true);
 
 // Helpful for debugging
-user_pref("devtools.inspector.color-scheme-simulation.enabled"	true);
+user_pref("devtools.inspector.color-scheme-simulation.enabled",	true);
+
+// Always warn on quitting
+user_pref("browser.sessionstore.warnOnQuit",			true);
+user_pref("browser.warnOnQuit",					true);
